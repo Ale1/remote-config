@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Homa.RemoteConfig
@@ -41,6 +42,24 @@ namespace Homa.RemoteConfig
         
         internal Package GetPackage(string key, string version) => packages.FirstOrDefault(p => p.packageKey == key && p.versionNumber == version);
 
+        public void ImportJObject(JObject jsonData)
+        {
+            var token = jsonData.Value<string>("token");
+            this.token = token;
+            var freshData = jsonData["res"];
+            this.manifestName = freshData!.Value<string>("s_manifest_name"); //todo: get jsonProperty instead of harcoded string
+            this.androidBundleId = freshData.Value<string>("s_android_bundle_id");
+            this.iosBundleId = freshData.Value<string>("s_ios_bundle_id");
+
+            var packagesToken = freshData["ao_packages"];
+            if (packagesToken != null) 
+                this.packages = packagesToken.ToObject<Package[]>();
+            else
+            {
+                Debug.LogWarning("RemoteConfig :: packages token was null");
+                this.packages = new Package[]{};
+            }
+        }
 
 
     }

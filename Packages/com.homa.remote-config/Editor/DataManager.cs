@@ -93,28 +93,13 @@ namespace Homa.RemoteConfig.Editor
                     return;
                 }
 
-                var token = jsonData.Value<string>("token");
-
                 try
                 {
-                    recon.token = token;
-                    var freshData = jsonData["res"];
-                    recon.manifestName = freshData!.Value<string>("s_manifest_name"); //todo: get jsonProperty instead of harcoded string
-                    recon.androidBundleId = freshData.Value<string>("s_android_bundle_id");
-                    recon.iosBundleId = freshData.Value<string>("s_ios_bundle_id");
-
-                    var packagesToken = freshData["ao_packages"];
-                    if (packagesToken != null) 
-                        recon.packages = packagesToken.ToObject<Package[]>();
-                    else
-                    {
-                        Debug.LogWarning("RemoteConfig :: packages token was null");
-                        recon.packages = new Package[]{};
-                    }
+                    recon.ImportJObject(jsonData);
                 }
                 catch (JsonException e)
                 {
-                    Debug.LogError("RemoteConfig :: JSON Deserialization Error: " + e.Message);
+                    Debug.LogError("RemoteConfig :: could not write JObject into SO " + e.Message);
                     return;
                 }
                 

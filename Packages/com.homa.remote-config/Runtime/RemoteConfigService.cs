@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace Homa.RemoteConfig
 {
+    
+    /// <summary>
+    /// Represents the main entry point for accessing remote configuration services.
+    /// </summary>
     public static class RemoteConfigService
     {
         public enum Source
@@ -15,23 +19,24 @@ namespace Homa.RemoteConfig
         
         #region Public API
         /// <summary>
-        /// todo: add xml comments
+        /// Retrieves a dictionary of parameters for a specified package of given version.
         /// </summary>
-        /// <param name="packageName"></param>
-        /// <param name="version"></param>
-        /// <param name="source"></param>
-        /// <returns></returns>
+        /// <param name="packageName">The name of the package to retrieve parameters for.</param>
+        /// <param name="version">The version of the package.</param>
+        /// <param name="source">The cache from which to retrieve the package parameters (Local or Remote).</param>
+        /// <returns>A dictionary(string, string) containing the parameters of the specified package and version.</returns>
         public static Dictionary<string, string> GetPackageParams(string packageName, string version, Source source)
         {
             return GetRecon(source)?.GetPackageParams(packageName, version); 
         }
 
         /// <summary>
-        /// todo: add xml comments
+        /// Retrieves a package object for a specified package name and version from the given source (Local or Remote).
         /// </summary>
-        /// <param name="packageName"></param>
-        /// <param name="version"></param>
-        /// <param name="source"></param>
+        /// <param name="packageName">The name of the package to be retrieved.</param>
+        /// <param name="version">The version of the package.</param>
+        /// <param name="source">The source from which to retrieve the package (Local or Remote).</param>
+        /// <returns>A Package object</returns>
         /// <returns></returns>
         public static Package GetPackage(string packageName, string version, Source source)
         {
@@ -40,15 +45,13 @@ namespace Homa.RemoteConfig
         
         
         /// <summary>
-        /// todo: add xml comments
+        /// Fetches remote config data without any serialization into Package objects. Essentially return the raw JObject from the Json representation of ao_packages.
         /// </summary>
-        /// <param name="packageName"></param>
-        /// <param name="versionNumber"></param>
-        /// <param name="data"></param>
-        /// <param name="jObject"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        private static bool GetRemote(string packageName, string versionNumber, JObject data, out JObject jObject)
+        /// <param name="packageName">The name of the package for which to retrieve data</param>
+        /// <param name="versionNumber">The version of the package desired</param>
+        /// <param name="jObject">The output JObject containing the contents of ao_packages json token.</param>
+        /// <returns>True if the operation was successful, otherwise false.</returns>
+        private static bool GetRemote(string packageName, string versionNumber, out JObject jObject)
         {
             throw new NotImplementedException();
         }    
