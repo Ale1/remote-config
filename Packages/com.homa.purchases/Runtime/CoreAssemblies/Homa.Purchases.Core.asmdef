@@ -1,0 +1,22 @@
+{
+    "name": "Homa.Purchases.Core",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cb885e794d145449fbbb9c971353a307"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.homa.remote-config",
+            "expression": "1.0.0",
+            "define": "HOMA_REMOTE_CONFIG"
+        }
+    ],
+    "noEngineReferences": false
+}

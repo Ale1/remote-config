@@ -1,0 +1,21 @@
+{
+  "name": "com.homa.purchases",
+  "version": "1.0.0",
+  "displayName": "Homa Purchases",
+  "description": "A demo package of home remote config",
+  "documentationUrl": "https://github.com/<something>/README.MD",
+  "changelogUrl": "https://github.com/<something>/CHANGELOG.MD",
+  "licensesUrl": "https://github.com/<something>/LICENCE.MD",
+  "keywords": [
+    "Home",
+    "Remote",
+    "Config"
+  ],
+  "author": {
+    "name": "Alejandro",
+    "email": "alejandro.barbero@gmail.com",
+    "url": "https://www.github.com/ale1"
+  },
+  "unity": "2021.3",
+  "unityRelease": "0f1"
+}

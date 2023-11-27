@@ -1,0 +1,19 @@
+{
+    "name": "Homa.RemoteConfig.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Unity.EditorCoroutines.Editor",
+        "Homa.RemoteConfig"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

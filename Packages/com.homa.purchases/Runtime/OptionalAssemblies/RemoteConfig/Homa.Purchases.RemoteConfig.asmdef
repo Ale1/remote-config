@@ -1,0 +1,24 @@
+{
+    "name": "Homa.Purchases.RemoteConfig",
+    "rootNamespace": "",
+    "references": [
+        "Homa.RemoteConfig"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "HOMA_REMOTE_CONFIG"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.homa.remote-config",
+            "expression": "1.0.0",
+            "define": "HOMA_REMOTE_CONFIG"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,25 @@
+{
+  "token": "DemoToK3n",
+  "s_manifest_name": "Demo Game",
+  "s_android_bundle_id": "com.homagames.demo-game",
+  "s_ios_bundle_id": "com.homagames.demo-game",
+  "ao_packages": [
+    {
+      "s_package_key": "com.homagames.localization",
+      "s_version_number": "1.0.1",
+      "o_parameters": {
+        "s_localization_file_url": "https://homagames.com/locales_v1.0.0.csv",
+        "s_localization_file_hash": "1d250a7d283646da71e79091d418377a"
+      }
+    },
+    {
+      "s_package_key": "com.homagames.purchases",
+      "s_version_number": "1.6.0",
+      "o_parameters": {
+        "s_ios_no_ads_sku": "demo.param1",
+        "s_android_no_ads_sku": "demo.param2",
+        "s_revenuecat_api_key": "demo.param3"
+      }
+    }
+  ]
+}
