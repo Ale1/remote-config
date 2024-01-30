@@ -20,6 +20,3 @@ Notes:
 + To avoid re-inventing the wheel and creating a whole new editor inspector from scratch (fun, but time-counsuming) I used scriptable Objects to leverage their pre-existing inspector editors and relatively easy integration with Project Settings.
 + However, half-way through I regretted this choice, and wish I had done a pure c#+json implementation, caching everything in serialized jsons and only using unity for the visual editor window.
 + The end results is a bit of a clunky mix of both approaches.  Pls it requires using config files in a resources folder, which is super duper annoying -even through its the recommended "unity way".
-+ Anyway, given I didnt have a lot of time due to busy schedule, I consider it a decent job, specially since everything (except serializable dictionary) was made from scratch.  
-+ Note that I am missing a few trivial integrations of the package so the editor features also work seamlessy in runtime. But nothing architecturally needs to change to make this happen, its just a few wires here and there. 
-+ Also would have liked to add some unity tests (and I believe a Remote Config system is ideal for unit testing!) but alas time constraints.   
